@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="en">
+<html lang="zu">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Capital Calculator — Vuka</title>
+    <title>Isibali Semali — Vuka</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -16,24 +16,24 @@
   <link rel="manifest" href="manifest.json" />
   </head>
   <body>
-    <a class="skip-link" href="#main">Skip to main content</a>
+    <a class="skip-link" href="#main">Yeqa uye kokuqukethwe okuyinhloko</a>
 
 <header class="ribbon">
   <div class="container ribbon-inner">
     <a class="logo" href="../../index.html">
       <img class="logo-img" src="../../images_global/vuka-logo-white.png" alt="Vuka logo" />
     </a>
-    <p class="calculator-page-title">Startup Capital Calculator</p>
+    <p class="calculator-page-title">Isibali Semali Yokuqala Ibhizinisi</p>
     <nav class="nav-right nav-right--compact" id="navRight" aria-label="Primary">
       <ul class="nav-links">
-        <li><a href="../../index.html">Home</a></li>
-        <li><a href="../../index.html#about">About</a></li>
-        <li><a href="../../index.html#modules">Journeys</a></li>
-        <li><a href="../../index.html#faq">FAQ</a></li>
+        <li><a href="../../index.html">Ekhaya</a></li>
+        <li><a href="../../index.html#about">Mayelana</a></li>
+        <li><a href="../../index.html#modules">Uhambo</a></li>
+        <li><a href="../../index.html#faq">Imibuzo</a></li>
       </ul>
      <select
             class="lang-select"
-            aria-label="Choose Language"
+            aria-label="Khetha Ulimi"
             onchange="if (this.value) window.location.href = this.value;"
           >
             <option value="" selected>🌐 English</option>
@@ -42,7 +42,7 @@
           </select>
     </nav>
 
-    <a class="btn btn-ghost btn-sm header-back-btn" href="../../index.html">← Go back to Home Page</a>
+    <a class="btn btn-ghost btn-sm header-back-btn" href="../../index.html">← Buyela Ekhasini Elikhulu</a>
 
     <button
       class="burger"
@@ -63,12 +63,10 @@
 
       <section class="hero">
    <h1 id="mealTitle" class="hidden"></h1>
-        <p id="feelFree">Feel free to adjust the ingredients if necessary.</p>
+        <p id="feelFree">Zizwe ukhululekile ukulungisa izithako uma kudingeka.</p>
         <p style="font-size: 11px" id="rates">
           <i
-            >Please note that these rates were applicable during August 2026 and
-            may change over time. Please double-check the information to ensure
-            that it remains accurate.</i
+            >Sicela uqaphele ukuthi lezi zindleko zazisebenza ngo-Agasti 2026 futhi zingashintsha ngokuhamba kwesikhathi. Sicela uhlole kabusha ulwazi ukuze uqinisekise ukuthi luhlala lunembile.</i
           >
         </p>
       </section>
@@ -96,49 +94,45 @@
             <thead>
               <tr>
                 <th class="tooltip">
-                  Product
+                  Umkhiqizo
                   <span class="tooltip-text">
-                    Enter the name of the product you will be using.
+                    Faka igama lomkhiqizo ozowusebenzisa.
                   </span>
                 </th>
                 <th class="tooltip">
                   Quantity
                   <span class="tooltip-text">
-                    Enter how many units of the product you will need.
+                    Faka inani lamayunithi omkhiqizo owudingayo.
                   </span>
                 </th>
                 <th class="tooltip">
                   Unit
                   <span class="tooltip-text">
-                    Enter the unit used to measure the product, such as kg,
-                    tray(s), l.
+                    Faka iyunithi esetshenziselwa ukukala umkhiqizo, njenge-kg, ithreyi/amathreyi, noma i-l.
                   </span>
                 </th>
                 <th class="tooltip">
                   Wt./Vol.
                   <span class="tooltip-text">
-                    Enter the weight or volume contained in one unit of the
-                    product.
+                    Faka isisindo noma ivolumu equkethwe kuyunithi eyodwa yomkhiqizo.
                   </span>
                 </th>
                 <th class="tooltip">
                   Total Wt./Vol.
                   <span class="tooltip-text">
-                    This is calculated automatically by multiplying the quantity
-                    by the weight/volume.
+                    Lokhu kubalwa ngokuzenzakalelayo ngokuphindaphinda inani ngesisindo/ivolumu.
                   </span>
                 </th>
                 <th class="tooltip">
                   Price (R)
                   <span class="tooltip-text">
-                    Enter the estimated price of one unit of the product in ZAR (R).
+                    Faka intengo elinganiselwe yiyunithi eyodwa yomkhiqizo nge-ZAR (R).
                   </span>
                 </th>
                 <th class="tooltip">
                   Total
                   <span class="tooltip-text">
-                    This is the estimated total cost for the quantity of this
-                    product.
+                    Le yindleko ephelele elinganiselwe yenani lalo mkhiqizo.
                   </span>
                 </th>
                 <th>
@@ -160,8 +154,8 @@
         </datalist>
 
         <div class="button-section-add">
-          <button id="addProduct" class="btn btn-outline btn-sm">+ Add Product</button>
-          <button id="calculate" class="btn btn-primary">Calculate Capital</button>
+          <button id="addProduct" class="btn btn-outline btn-sm">+ Engeza Umkhiqizo</button>
+          <button id="calculate" class="btn btn-primary">Bala Imali</button>
         </div>
 
         <div class="capital-card">
@@ -169,28 +163,25 @@
           <h1 id="capital">R0.00</h1>
           <p style="font-size: 10px">
             <i
-              >Please note that this amount may not represent the total cost you
-              will incur. The actual cost may be higher or lower depending on
-              various factors. This figure is provided as an estimate to give you
-              an indication of the potential expenses involved.</i
+              >Sicela uqaphele ukuthi le mali kungenzeka ingabonisi izindleko eziphelele ozoba nazo. Izindleko zangempela zingaba phezulu noma ziphansi kuye ngezici ezahlukahlukene. Lesi sibalo sinikezwa njengokulinganisa ukuze sikunikeze umbono ngezindleko ezingaba khona.</i
             >
           </p>
         </div>
 
         <div class="button-section">
-          <button onclick="history.back()" class="btn btn-outline">← Back</button>
-          <button id="downloadList" class="btn btn-primary">↓ Download Product List</button>
+          <button onclick="history.back()" class="btn btn-outline">← Emuva</button>
+          <button id="downloadList" class="btn btn-primary">↓ Landa Uhlu Lwemikhiqizo</button>
         </div>
       </div>
 
       <div id="removeModal" class="modal-overlay">
         <div class="modal">
-          <h2>Remove Product</h2>
-          <p>Are you sure you want to remove this product?</p>
+          <h2>Susa Umkhiqizo</h2>
+          <p>Uyaqiniseka ukuthi ufuna ukususa lo mkhiqizo?</p>
           <div id="removeProductInfo" class="remove-product-info"></div>
           <div class="modal-buttons">
-            <button id="confirmRemove" class="btn btn-primary confirm-btn">Yes, Remove</button>
-            <button id="cancelRemove" class="btn btn-outline cancel-btn">Cancel</button>
+            <button id="confirmRemove" class="btn btn-primary confirm-btn">Yebo, Susa</button>
+            <button id="cancelRemove" class="btn btn-outline cancel-btn">Khansela</button>
           </div>
         </div>
       </div>
@@ -198,7 +189,7 @@
       <div id="negativeModal" class="modal-overlay">
         <div class="modal">
           <h2>Invalid Number</h2>
-          <p>Negative numbers are not allowed.</p>
+          <p>Izinombolo ezingezinhle (negative numbers) azivunyelwe.</p>
           <button id="negativeOk" class="btn btn-primary confirm-btn">OK</button>
         </div>
       </div>
@@ -215,7 +206,7 @@
               alt="VUKA"
             />
             <p class="footer-note">
-              Free skills for South Africa's food-sector entrepreneurs.
+              Amakhonoamahhala abomabhizinisi bomkhakha wokudla baseNingizimu Afrika.
             </p>
           </div>
 
@@ -223,9 +214,9 @@
           <div class="footer-column">
             <h3>Quick Links</h3>
             <div class="footer-links">
-              <a href="../../index.html">Home</a>
-              <a href="../../team.html">Meet the Team</a>
-              <a href="https://forms.google.com/" target="_blank" rel="noopener">Please Review Us</a>
+              <a href="../../index.html">Ekhaya</a>
+              <a href="../../team.html">Hlangana Neqembu</a>
+              <a href="https://forms.google.com/" target="_blank" rel="noopener">Sicela Usibuyekeze</a>
             </div>
           </div>
         </div>
@@ -244,7 +235,7 @@
             </div>
           </div>
 
-          <p class="footer-copyright">© 2026 VUKA. All rights reserved.</p>
+          <p class="footer-copyright">© 2026 VUKA. Wonke amalungelo agodliwe.</p>
         </div>
       </div>
     </footer>

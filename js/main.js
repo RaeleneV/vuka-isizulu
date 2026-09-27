@@ -53,7 +53,7 @@
 // ==========================================================================
 (function () {
   var READY_THRESHOLD = 0.6;
-  var READY_MESSAGE = "Nice work. You're showing real signs of growth!";
+  var READY_MESSAGE = "Umsebenzi omuhle. Ukhombisa izimpawu zangempela zokukhula!";
 
   var list = document.getElementById("checklistList");
   if (!list) return; // not on this page
@@ -69,7 +69,7 @@
 
   if (!countEl || !percentEl || !fillEl || !barEl || !messageEl || !messageTextEl || !badgeSection) {
     console.warn(
-      "Journey 1 checklist: missing one or more required elements.",
+      "Uhlu lokuhlola loHambo 1: kuntula into eyodwa noma ezingaphezulu ezidingekayo.",
       { countEl: !!countEl, percentEl: !!percentEl, fillEl: !!fillEl, barEl: !!barEl,
         messageEl: !!messageEl, messageTextEl: !!messageTextEl, badgeSection: !!badgeSection }
     );
@@ -238,7 +238,7 @@
 // Journey 1 — Reflection textbox (partial-progress message + automatic badge)
 // ==========================================================================
 (function () {
-  var READY_MESSAGE = "Great reflection! You are ready to take the next step.";
+  var READY_MESSAGE = "Ukucabanga okuhle! Ulungele ukuthatha isinyathelo esilandelayo.";
 
   var textarea = document.getElementById("growthReflectionInput");
   var messageEl = document.getElementById("reflectionMessage");
@@ -326,11 +326,11 @@
 
     var message;
     if (profit > 0) {
-      message = "Your profit this week is <strong>" + profit.toFixed(2) + "</strong>. Well done!";
+      message = "Inzuzo yakho kuleli sonto ngu- <strong>" + profit.toFixed(2) + "</strong>. Wenze kahle!";
     } else if (profit === 0) {
-      message = "You broke even this week: <strong>0.00</strong> profit.";
+      message = "You broke even kuleli sonto: <strong>0.00</strong> profit.";
     } else {
-      message = "You made a loss of <strong>" + Math.abs(profit).toFixed(2) + "</strong> this week.";
+      message = "Ulahlekelwe ngu- <strong>" + Math.abs(profit).toFixed(2) + "</strong> this week.";
     }
 
     profitResult.innerHTML = message;
@@ -364,7 +364,7 @@
     var emergency = emergencyInput.value.trim();
 
     if (!business && !personal && !emergency) {
-      resultEl.textContent = "Fill in at least one place to save your plan.";
+      resultEl.textContent = "Gcwalisa okungenani indawo eyodwa ukuze ugcine uhlelo lwakho.";
       resultEl.classList.remove("hidden");
       resultEl.classList.add("result-error");
       return;
@@ -405,7 +405,7 @@
     var idea = ideaInput.value.trim();
 
     if (!expense || !idea) {
-      resultEl.textContent = "Add your biggest expense and one idea to reduce it.";
+      resultEl.textContent = "Engeza izindleko zakho ezinkulu kunazo zonke nombono owodwa wokuzinciphisa.";
       resultEl.classList.remove("hidden");
       resultEl.classList.add("result-error");
       return;
@@ -491,14 +491,14 @@
 
   var requirements = {
     capitec: [
-      "An existing Capitec GlobalOne personal account",
-      "Your South African ID",
-      "No minimum deposit to open",
+      "I-akhawunti yakho ekhona ye-Capitec GlobalOne yomuntu siqu",
+      "I-ID yakho yaseNingizimu Afrika",
+      "Ayikho inani eliphansi lokubeka ukuze uvule",
     ],
     tyme: [
-      "An existing TymeBank \"Good Friends\" personal account",
-      "Set up in the app: My Profile > My Details > Business Benefits",
-      "Free to open",
+      "I-akhawunti yakho ekhona ye-TymeBank yomuntu siqu ethi \"Good Friends\"",
+      "Ihlelwa ku-app: My Profile > My Details > Business Benefits",
+      "Ivulwa mahhala",
     ],
   };
 
@@ -534,7 +534,7 @@
       }
 
       if (!chosenTasks.length) {
-        resultEl.textContent = "Tick at least one thing you'll do this week.";
+        resultEl.textContent = "Phawula okungenani into eyodwa ozoyenza kuleli sonto.";
         resultEl.classList.remove("hidden");
         resultEl.classList.add("result-error");
         return;
@@ -568,7 +568,7 @@
     var notes = notesInput.value.trim();
 
     if (!notes) {
-      resultEl.textContent = "Add at least one document or permit you'll need.";
+      resultEl.textContent = "Engeza okungenani incwadi eyodwa noma imvume ozoyidinga.";
       resultEl.classList.remove("hidden");
       resultEl.classList.add("result-error");
       return;
@@ -752,19 +752,19 @@
     if (total >= VAT_THRESHOLD) {
       progressFillEl.classList.add("over-limit");
       resultEl.classList.add("result-alert");
-      statusLine = "Your sales are at or above the VAT threshold. Confirm your position with SARS promptly.";
+      statusLine = "Ukuthengisa kwakho kusesilinganisweni noma ngaphezu kwesilinganiso se-VAT. Qinisekisa isikhundla sakho ne-SARS masinyane.";
     } else if (percent >= 80) {
       progressFillEl.classList.add("near-limit");
       resultEl.classList.add("result-warning");
-      statusLine = "You're getting close — about R" + (VAT_THRESHOLD - total).toLocaleString("en-ZA", { maximumFractionDigits: 0 }) + " below the R2.3 million VAT threshold.";
+      statusLine = "Usondela — cishe u-R" + (VAT_THRESHOLD - total).toLocaleString("en-ZA", { maximumFractionDigits: 0 }) + " ngaphansi kwesilinganiso se-VAT esingu-R2.3 million.";
     } else {
-      statusLine = "You are R" + (VAT_THRESHOLD - total).toLocaleString("en-ZA", { maximumFractionDigits: 0 }) + " below the compulsory VAT threshold of R2,300,000.";
+      statusLine = "Uphansi ngo-R" + (VAT_THRESHOLD - total).toLocaleString("en-ZA", { maximumFractionDigits: 0 }) + " ngaphansi kwesilinganiso esiphoqelekile se-VAT esingu-R2,300,000.";
     }
 
     var recordLabel = recordsType === "estimate" ? "This is only an estimate." : "These are actual records.";
 
     resultEl.innerHTML =
-      "Recorded across " + monthsTrading + " month" + (monthsTrading === 1 ? "" : "s") + ": <strong>R" + total.toLocaleString("en-ZA", { maximumFractionDigits: 2 }) + "</strong><br>" +
+      "Kurekhodwe ezinyangeni ezingu-" + monthsTrading + ": <strong>R" + total.toLocaleString("en-ZA", { maximumFractionDigits: 2 }) + "</strong><br>" +
       statusLine + "<br>" +
       '<span class="small">' + recordLabel + "</span>";
     resultEl.classList.remove("hidden");
@@ -791,24 +791,24 @@
   if (form) form.addEventListener("submit", function (e) { e.preventDefault(); });
 
   var actionLabels = {
-    records: "Start keeping monthly sales records",
-    "turnover-tax": "Check whether I qualify for Turnover Tax",
-    efiling: "Log into or create my SARS eFiling profile",
-    branch: "Book a SARS appointment or visit a branch",
-    practitioner: "Speak to a registered tax practitioner",
+    records: "Qala ukugcina amarekhodi ezokuthengisa zenyanga",
+    "turnover-tax": "Hlola ukuthi ngiyafanelekela yini i-Turnover Tax",
+    efiling: "Ngena noma wenze iphrofayela yami ye-SARS eFiling",
+    branch: "Bhukha isikhathi se-SARS noma uvakashele igatsha",
+    practitioner: "Khuluma nochwepheshe wentela obhalisiwe",
   };
 
   var reminderLabels = {
-    none: "No reminder set",
-    "3days": "Reminder set for 3 days from now",
-    "1week": "Reminder set for next week",
+    none: "Asikho isikhumbuzo esisethiwe",
+    "3days": "Isikhumbuzo sisethelwe ezinsukwini ezi-3 ezizayo",
+    "1week": "Isikhumbuzo sisethelwe ngesonto elilandelayo",
   };
 
   btn.addEventListener("click", function () {
     var missing = [];
-    if (!choiceSelect.value) missing.push("choose an action");
-    if (!dateInput.value) missing.push("pick a target date");
-    if (!ackCheckbox.checked) missing.push("confirm you understand this is guidance, not a SARS decision");
+    if (!choiceSelect.value) missing.push("khetha isinyathelo");
+    if (!dateInput.value) missing.push("khetha usuku oluhlosiwe");
+    if (!ackCheckbox.checked) missing.push("qinisekisa ukuthi uyaqonda ukuthi lesi isiqondiso, hhayi isinqumo se-SARS");
 
     if (missing.length) {
       resultEl.innerHTML = "Please " + missing.join(", ") + ".";
@@ -853,45 +853,45 @@
 
   var whereText = {
     home: "trade from home or a yard",
-    stall: "trade from a stall, table, pavement, or public space",
-    shop: "trade from a shop or container",
-    online: "sell online or by delivery",
+    stall: "thengisa esitalini, etafuleni, endleleni yabahamba ngezinyawo, noma endaweni yomphakathi",
+    shop: "thengisa esitolo noma esitsheni",
+    online: "thengisa ku-inthanethi noma ngokulethelwa",
   };
 
   var whatText = {
-    packaged: "sell packaged goods",
-    food: "sell fresh or prepared food",
-    services: "offer services",
-    other: "sell something else",
+    packaged: "thengisa impahla epakishiwe",
+    food: "thengisa ukudla okusha noma okulungisiwe",
+    services: "nikeza izinsizakalo",
+    other: "thengisa okunye",
   };
 
   var setupText = {
-    sole: "You're currently trading as a sole proprietor.",
-    partnership: "You're currently trading as a partnership.",
-    company: "You already have a registered company.",
-    unsure: "You're not yet sure of your business structure — that's worth settling early, since it affects tax and liability.",
+    sole: "Njengamanje uthengisa njengomnikazi oyedwa.",
+    partnership: "Njengamanje uthengisa njengobambiswano.",
+    company: "Usunayo inkampani ebhalisiwe.",
+    unsure: "Awuqiniseki okwamanje ngesakhiwo sebhizinisi lakho — kuyafaneleka ukukuxazulula ngokushesha, njengoba kuthinta intela nomthwalo wemfanelo.",
   };
 
   function buildRecommendations(where, what) {
     var recs = [];
 
-    if (where === "stall") recs.push("check your local municipality's informal-trading permit requirements");
-    else if (where === "home") recs.push("check whether your property is zoned for business use");
-    else if (where === "shop") recs.push("check your municipal business licence requirements for a fixed premises");
-    else if (where === "online") recs.push("check the Consumer Protection Act's rules for online and distance sales");
+    if (where === "stall") recs.push("hlola izidingo zemvume yokuthengisa okungahlelekile kamasipala wakini");
+    else if (where === "home") recs.push("hlola ukuthi impahla yakho ihlelelwe ukusetshenziselwa ibhizinisi yini");
+    else if (where === "shop") recs.push("hlola izidingo zelayisense yebhizinisi lamasipala zendawo ebekiwe");
+    else if (where === "online") recs.push("hlola imithetho ye-Consumer Protection Act yokuthengisa ku-inthanethi nokuthengisa kude");
 
-    if (what === "food") recs.push("look into your local Environmental Health Department's Certificate of Acceptability (food safety permit)");
-    else if (what === "packaged") recs.push("check whether your labelling meets the Foodstuffs, Cosmetics and Disinfectants Act rules, if applicable");
-    else if (what === "services") recs.push("check whether your type of service needs its own professional registration or licence");
+    if (what === "food") recs.push("hlola i-Certificate of Acceptability yehhovisi lakho lasekhaya le-Environmental Health (imvume yokuphepha kokudla)");
+    else if (what === "packaged") recs.push("hlola ukuthi ukulebula kwakho kuhambisana yini nemithetho ye-Foodstuffs, Cosmetics and Disinfectants Act, uma kuyasebenza");
+    else if (what === "services") recs.push("hlola ukuthi uhlobo lwakho lwensizakalo ludinga yini ukubhaliswa noma ilayisense yochwepheshe ehlukile");
 
-    recs.push("register your business with CIPC if you haven't already, since this underpins everything else");
+    recs.push("bhalisa ibhizinisi lakho ne-CIPC uma ungakenzi, ngoba lokhu kusekela konke okunye");
 
     return recs;
   }
 
   btn.addEventListener("click", function () {
     if (!whereSelect.value || !whatSelect.value || !setupSelect.value) {
-      resultEl.innerHTML = "Please answer all three questions.";
+      resultEl.innerHTML = "Sicela uphendule yonke imibuzo emithathu.";
       resultEl.classList.remove("hidden");
       resultEl.classList.add("result-error");
       return;
@@ -905,7 +905,7 @@
     var recList = recs.map(function (r) { return "<li>" + r.charAt(0).toUpperCase() + r.slice(1) + "</li>"; }).join("");
 
     resultEl.innerHTML =
-      '<p class="compliance-map-summary">Because you ' + whereText[where] + " and " + whatText[what] + ", here's what to investigate first:</p>" +
+      '<p class="compliance-map-summary">Ngoba ' + whereText[where] + " futhi " + whatText[what] + ", nakhu okufanele ukuphenye kuqala:</p>" +
       '<ul class="compliance-map-list">' + recList + "</ul>" +
       '<span class="small">' + setupText[setup] + "</span>";
     resultEl.classList.remove("hidden");
@@ -976,7 +976,7 @@ initReflection({
   messageId: "strategyStarterMessage",
   messageTextId: "strategyStarterMessageText",
   badgeSectionId: "strategyStarterBadgeSection",
-  readyMessage: "Great — purpose and vision noted.",
+  readyMessage: "Kuhle kakhulu — inhloso nombono sekuqaphelekile.",
   storageKey: "strategyStarterBadge",
 });
 
@@ -985,7 +985,7 @@ initReflection({
   messageId: "foundVoiceMessage",
   messageTextId: "foundVoiceMessageText",
   badgeSectionId: "foundVoiceBadgeSection",
-  readyMessage: "You've found your tagline!",
+  readyMessage: "Usuwutholile umusho wakho oyisiqubulo!",
   storageKey: "foundMyVoiceBadge",
 });
 
@@ -998,7 +998,7 @@ initReflection({
   messageId: "clearCommunicatorMessage",
   messageTextId: "clearCommunicatorMessageText",
   badgeSectionId: "clearCommunicatorBadgeSection",
-  readyMessage: "Good strategies for handling a tough moment.",
+  readyMessage: "Amasu amahle okuphatha isikhathi esinzima.",
   storageKey: "clearCommunicatorBadge",
 });
 
@@ -1007,7 +1007,7 @@ initReflection({
   messageId: "timeTamerMessage",
   messageTextId: "timeTamerMessageText",
   badgeSectionId: "timeTamerBadgeSection",
-  readyMessage: "That's a solid daily structure.",
+  readyMessage: "Lolo wuhlelo lwansuku zonke oluqinile.",
   storageKey: "timeTamerBadge",
 });
 
@@ -1016,7 +1016,7 @@ initReflection({
   messageId: "teamBuilderMessage",
   messageTextId: "teamBuilderMessageText",
   badgeSectionId: "teamBuilderBadgeSection",
-  readyMessage: "Clear roles make a stronger team.",
+  readyMessage: "Izindima ezicacile zakha ithimba eliqinile.",
   storageKey: "teamBuilderBadge",
 });
 
@@ -1025,7 +1025,7 @@ initReflection({
   messageId: "proModeMessage",
   messageTextId: "proModeMessageText",
   badgeSectionId: "proModeBadgeSection",
-  readyMessage: "That's a habit worth building.",
+  readyMessage: "Lowo ngumkhuba okufanele uwuthuthukise.",
   storageKey: "proModeBadge",
 });
 
@@ -1034,7 +1034,7 @@ initReflection({
   messageId: "wellConnectedMessage",
   messageTextId: "wellConnectedMessageText",
   badgeSectionId: "wellConnectedBadgeSection",
-  readyMessage: "You've got people to call on.",
+  readyMessage: "Unabantu ongabacela usizo.",
   storageKey: "wellConnectedBadge",
 });
 
@@ -1043,7 +1043,7 @@ initReflection({
   messageId: "pitchReadyMessage",
   messageTextId: "pitchReadyMessageText",
   badgeSectionId: "pitchReadyBadgeSection",
-  readyMessage: "That's the start of a solid funding pitch.",
+  readyMessage: "Leso yisiqalo sesethulo esiqinile sokufuna uxhaso lwezimali.",
   storageKey: "pitchReadyBadge",
 });
 
@@ -1052,7 +1052,7 @@ initReflection({
   messageId: "structureCheckMessage",
   messageTextId: "structureCheckMessageText",
   badgeSectionId: "structureCheckBadgeSection",
-  readyMessage: "Good — worth revisiting as your business grows.",
+  readyMessage: "Kuhle — kufanelekile ukuthi ubuyele kukho njengoba ibhizinisi lakho likhula.",
   storageKey: "structureCheckBadge",
 });
 
@@ -1070,7 +1070,7 @@ initReflection({
 
   if (!primaryInput || !secondaryInput || !messageEl || !messageTextEl || !badgeSection) return; // not on this page
 
-  var READY_MESSAGE = "Your brand identity is locked in.";
+  var READY_MESSAGE = "Ubunjalo bomkhiqizo wakho sebuqinisekisiwe.";
   var STORAGE_KEY = "lookLockedInBadge";
   var hasInteracted = false;
 
@@ -1128,15 +1128,17 @@ initReflection({
   var CORRECT_ANSWERS = ["A", "C", "D", "E", "G"];
 
   var CORRECT_MESSAGE =
-    "Great work! You do not need to be CIPC-registered to sign up as a Sole " +
-    "Proprietor. You need your personal details, South African ID " +
-    "verification, a trading address, and a South African bank account in " +
-    "your own name. You can then choose the card machine that suits your business.";
+    "Umsebenzi omuhle! Awudingi ukubhaliswa yi-CIPC ukuze ubhalise njengoMnikazi " +
+    "Oyedwa (Sole Proprietor). Udinga imininingwane yakho siqu, ubuqinisekiso " +
+    "besazisi saseNingizimu Afrika, ikheli lokuhweba, kanye ne-akhawunti " +
+    "yasebhange yaseNingizimu Afrika egameni lakho. Ungabe usukhetha umshini " +
+    "wamakhadi ofanele ibhizinisi lakho.";
 
   var INCORRECT_MESSAGE =
-    "Try again. Remember: Yoco allows Sole Proprietors to sign up without " +
-    "CIPC registration. Focus on the identity, address, and banking details " +
-    "needed to set up card payments.";
+    "Zama futhi. Khumbula: I-Yoco ivumela abanikazi bamabhizinisi azimele " +
+    "ukuthi babhalise ngaphandle kokubhalisa kwa-CIPC. Gxila ebufakazini " +
+    "bobunikazi, ekhelini, kanye nemininingwane yasebhange edingekayo ukuze " +
+    "usethe uhlelo lokwamukela izinkokhelo zamakhadi.";
 
   function clearHighlights() {
     options.forEach(function (option) {
@@ -1219,15 +1221,15 @@ initReflection({
   if (form) form.addEventListener("submit", function (e) { e.preventDefault(); });
 
   var COMPLETED_MESSAGE =
-    "You have found a funding-support contact point. Being unregistered " +
-    "does not have to prevent you from exploring your options. Your next " +
-    "step is to contact the organisation and ask whether your business " +
-    "idea meets its requirements.";
+    "Uthole indawo yokuxhumana ukuze uthole uxhaso. Ukungabhalisi " +
+    "akudingeki kukuvimbele ekuhloleni amathuba onawo. Isinyathelo sakho " +
+    "esilandelayo wukuxhumana nenhlangano bese ubuza ukuthi ingabe " +
+    "umbono webhizinisi lakho uyahlangabezana yini nezidingo zayo.";
 
   var INCOMPLETE_MESSAGE =
-    "Please fill in the organisation, a specific branch or contact point, " +
-    "your town or area, a contact method, a phone number or email, and " +
-    "one question you would ask the funder.";
+    "Sicela ugcwalise igama lenhlangano, igatsha elithile noma indawo yokuxhumana, " +
+    "idolobha noma indawo ohlala kuyo, indlela yokuxhumana, inombolo yocingo noma i-imeyili, kanye " +
+    "nombuzo owodwa ongawubuza umxhasi.";
 
   function showBadge() {
     if (badgeSection.classList.contains("earned")) return;
@@ -1302,7 +1304,7 @@ initReflection({
     var situation = document.querySelector('input[name="employerSituation"]:checked');
 
     if (!situation) {
-      resultEl.textContent = "Please select the statement that describes your business today.";
+      resultEl.textContent = "Sicela ukhethe isitatimende esichaza ibhizinisi lakho namuhla.";
       resultEl.classList.remove("hidden");
       resultEl.classList.add("result-error");
       return;
@@ -1325,7 +1327,7 @@ initReflection({
       summary = complete ? "Planned hire date: " + hireDateInput.value : "";
     } else {
       complete = true;
-      summary = "No current employees or hiring plans noted.";
+      summary = "Azikho izinhlelo zamanje zabasebenzi noma zokuqasha eziphawuliwe.";
     }
 
     if (complete) {
@@ -1335,7 +1337,7 @@ initReflection({
       localStorage.setItem("fairEmployerBadge", "earned");
       showBadge();
     } else {
-      resultEl.textContent = "Please complete the checklist or hiring statement before saving.";
+      resultEl.textContent = "Sicela ugcwalise uhlu lokuhlola noma isitatimende sokuqasha ngaphambi kokulondoloza.";
       resultEl.classList.remove("hidden");
       resultEl.classList.add("result-error");
     }
@@ -1371,13 +1373,13 @@ initReflection({
 
   btn.addEventListener("click", function () {
     if (!buyerName.value.trim() || !safetyRequirement.value.trim()) {
-      resultEl.textContent = "Please name a specific buyer and note one supplier requirement or question.";
+      resultEl.textContent = "Sicela usho umthengi othize bese ubhala imfuneko eyodwa yomhlinzeki noma umbuzo.";
       resultEl.classList.remove("hidden");
       resultEl.classList.add("result-error");
       return;
     }
 
-    resultEl.textContent = "Saved: " + buyerName.value.trim() + " — " + safetyRequirement.value.trim();
+    resultEl.textContent = "Kugciniwe: " + buyerName.value.trim() + " — " + safetyRequirement.value.trim();
     resultEl.classList.remove("hidden");
     resultEl.classList.remove("result-error");
     localStorage.setItem("retailReadyBadge", "earned");
@@ -1414,7 +1416,7 @@ initReflection({
 
   btn.addEventListener("click", function () {
     if (!materialSelect.value || !proQuestion.value.trim()) {
-      resultEl.textContent = "Please choose a packaging material and record a question to investigate.";
+      resultEl.textContent = "Sicela ukhethe izinto zokupakisha bese ubhala umbuzo ozowuhlola.";
       resultEl.classList.remove("hidden");
       resultEl.classList.add("result-error");
       return;
@@ -1457,7 +1459,7 @@ initReflection({
 
   btn.addEventListener("click", function () {
     if (!nameSearched.value.trim() || !brandNextStep.value) {
-      resultEl.textContent = "Please enter the name searched and choose a next step.";
+      resultEl.textContent = "Sicela ufake igama eliseshiwe bese ukhetha isinyathelo esilandelayo.";
       resultEl.classList.remove("hidden");
       resultEl.classList.add("result-error");
       return;
@@ -1501,7 +1503,7 @@ initReflection({
 
   btn.addEventListener("click", function () {
     if (!taxStatus.value || !bbeeStatus.value || !qualifiesEME.value) {
-      resultEl.textContent = "Please complete both document statuses and your EME check.";
+      resultEl.textContent = "Sicela ugcwalise kokubili izimo zedokhumenti kanye nokuhlola kwakho kwe-EME.";
       resultEl.classList.remove("hidden");
       resultEl.classList.add("result-error");
       return;
@@ -1553,7 +1555,7 @@ initReflection({
     var hasStatement = purposeStatement.value.trim() !== "";
 
     if (!hasAtLeastOneYes || !hasStatement) {
-      resultEl.textContent = "Please mark at least one type of data you collect and write a short purpose statement.";
+      resultEl.textContent = "Sicela umake okungenani uhlobo olulodwa lwedatha oluqoqayo bese ubhala isitatimende senhloso esifushane.";
       resultEl.classList.remove("hidden");
       resultEl.classList.add("result-error");
       return;
@@ -1583,7 +1585,7 @@ initReflection({
   var otherRadio = document.getElementById("growthOptionOtherRadio");
   var otherText = document.getElementById("growthOptionOtherText");
   var researchInput = document.getElementById("growthResearch");
-  var actionInput = document.getElementById("growthAction");
+  var actionInput = document.getElementById("growthIsinyathelo");
   var resultEl = document.getElementById("growthPlanResult");
   var badgeSection = document.getElementById("growthPlanBadgeSection");
 
@@ -1609,7 +1611,7 @@ initReflection({
     var chosenLabel = chosen ? (chosen.value === "Other" ? otherText.value.trim() : chosen.value) : "";
 
     if (!chosen || (chosen.value === "Other" && !otherText.value.trim()) || !researchInput.value.trim() || !actionInput.value.trim()) {
-      resultEl.textContent = "Please choose a growth option and note one research question and one next action.";
+      resultEl.textContent = "Sicela ukhethe inketho yokukhula bese ubhala umbuzo owodwa wocwaningo kanye nesenzo esilandelayo.";
       resultEl.classList.remove("hidden");
       resultEl.classList.add("result-error");
       return;
@@ -1663,7 +1665,7 @@ initReflection({
     barEl.setAttribute("aria-valuenow", percent);
 
     if (total > 0 && checked === total) {
-      messageTextEl.textContent = "Nice! your kitchen basics are covered.";
+      messageTextEl.textContent = "Kuhle! Izisekelo zekhishini lakho ziphelele.";
       messageEl.classList.add("is-visible");
       localStorage.setItem("kitchenReadyBadge", "earned");
       showBadge();
@@ -1717,7 +1719,7 @@ initReflection({
     });
 
     if (!allChecked || !improvementInput.value.trim()) {
-      resultEl.textContent = "Please check all five label requirements and note one improvement.";
+      resultEl.textContent = "Sicela uhlole zonke izidingo ezinhlanu zelebula futhi ubhale ukuthuthukiswa okukodwa.";
       resultEl.classList.remove("hidden");
       resultEl.classList.add("result-error");
       return;
@@ -1789,7 +1791,7 @@ initReflection({
       showBadge();
     } else if (hasThermometerNo.checked) {
       if (!thermometerGetByDate.value || !thermometerCheckDate.value) {
-        resultEl.textContent = "Please set a date to get a thermometer and a date for your first check.";
+        resultEl.textContent = "Sicela ubeke usuku lokuthola ithemomitha nosuku lokuhlola kwakho kokuqala.";
         resultEl.classList.remove("hidden");
         resultEl.classList.add("result-error");
         return;
@@ -1800,7 +1802,7 @@ initReflection({
       localStorage.setItem("coldChainBadge", "earned");
       showBadge();
     } else {
-      resultEl.textContent = "Please select whether you have a thermometer.";
+      resultEl.textContent = "Sicela ukhethe ukuthi unayo yini ithemomitha.";
       resultEl.classList.remove("hidden");
       resultEl.classList.add("result-error");
     }
@@ -1847,7 +1849,7 @@ initReflection({
     });
 
     if (!hasAtLeastOnePerson || !hasProofAnswer || !actionInput.value.trim()) {
-      resultEl.textContent = "Please record at least yourself, mark proof availability, and add one action.";
+      resultEl.textContent = "Sicela urekhode okungenani wena uqobo, ubeke uphawu ekutholakaleni kobufakazi, futhi wengeze isinyathelo esisodwa.";
       resultEl.classList.remove("hidden");
       resultEl.classList.add("result-error");
       return;
@@ -1896,7 +1898,7 @@ initReflection({
     });
 
     if (!hasAtLeastOneProduct || !riskProductName.value.trim() || !riskQuestion.value.trim()) {
-      resultEl.textContent = "Please list at least one planned product and one question to investigate.";
+      resultEl.textContent = "Sicela ubhale okungenani umkhiqizo owodwa ohleliwe nombuzo owodwa okufanele uphenywe.";
       resultEl.classList.remove("hidden");
       resultEl.classList.add("result-error");
       return;
@@ -1949,20 +1951,20 @@ initReflection({
     frontSelects.forEach(function (select) { if (select.value === "No") hasNo = true; });
 
     if (!hasItem || !hasAnswer) {
-      resultEl.textContent = "Please check at least one item and confirm whether the oldest stock is at the front.";
+      resultEl.textContent = "Sicela uhlole okungenani into eyodwa futhi uqinisekise ukuthi isitoko esidala kunazo zonke siphambili yini.";
       resultEl.classList.remove("hidden");
       resultEl.classList.add("result-error");
       return;
     }
 
     if (hasNo && !actionInput.value.trim()) {
-      resultEl.textContent = "You marked an item as not FIFO-compliant. Please note the action you took.";
+      resultEl.textContent = "Uphawule into njengengalandeli i-FIFO. Sicela ubhale isinyathelo osithathile.";
       resultEl.classList.remove("hidden");
       resultEl.classList.add("result-error");
       return;
     }
 
-    resultEl.textContent = "Saved. " + (actionInput.value.trim() ? "Action: " + actionInput.value.trim() : "Your oldest stock is correctly positioned.");
+    resultEl.textContent = "Saved. " + (actionInput.value.trim() ? "Action: " + actionInput.value.trim() : "Isitoko sakho esidala kunazo zonke sibekwe ngendlela efanele.");
     resultEl.classList.remove("hidden");
     resultEl.classList.remove("result-error");
     localStorage.setItem("fifoFocusedBadge", "earned");
@@ -2008,7 +2010,7 @@ initReflection({
     }
 
     if (!hasCompleteRow) {
-      resultEl.textContent = "Please complete at least one full row: item, par level, and reorder point.";
+      resultEl.textContent = "Sicela ugcwalise okungenani umugqa owodwa ophelele: into, izinga le-par, nephuzu lokuoda kabusha.";
       resultEl.classList.remove("hidden");
       resultEl.classList.add("result-error");
       return;
@@ -2060,7 +2062,7 @@ initReflection({
     var choice = document.querySelector('input[name="anySoldOut"]:checked');
 
     if (!choice) {
-      resultEl.textContent = "Please select whether anything sold out today.";
+      resultEl.textContent = "Sicela ukhethe ukuthi kukhona okuphelile yini namuhla.";
       resultEl.classList.remove("hidden");
       resultEl.classList.add("result-error");
       return;
@@ -2071,7 +2073,7 @@ initReflection({
       itemInputs.forEach(function (input) { if (input.value.trim() !== "") hasItem = true; });
 
       if (!hasItem || !changeInput.value.trim()) {
-        resultEl.textContent = "Please record at least one item that sold out and one change for next time.";
+        resultEl.textContent = "Sicela urekhode okungenani into eyodwa ephelile nokushintsha okukodwa kwesikhathi esilandelayo.";
         resultEl.classList.remove("hidden");
         resultEl.classList.add("result-error");
         return;
@@ -2181,13 +2183,13 @@ initReflection({
     checks.forEach(function (select) { if (!select.value) allChecked = false; });
 
     if (!allChecked || !nameInput.value.trim() || !productsInput.value.trim() || !hoursInput.value.trim()) {
-      resultEl.textContent = "Please complete the checklist and write your greeting message details.";
+      resultEl.textContent = "Sicela ugcwalise uhlu lokuhlola bese ubhala imininingwane yomyalezo wakho wokubingelela.";
       resultEl.classList.remove("hidden");
       resultEl.classList.add("result-error");
       return;
     }
 
-    resultEl.textContent = "Profile saved for " + nameInput.value.trim() + ".";
+    resultEl.textContent = "Iphrofayili igcinelwe u " + nameInput.value.trim() + ".";
     resultEl.classList.remove("hidden");
     resultEl.classList.remove("result-error");
     localStorage.setItem("businessReadyBadge", "earned");
@@ -2231,7 +2233,7 @@ initReflection({
     }
 
     if (completeCount < 3 || !shareMethod.value || !updateFrequency.value.trim()) {
-      resultEl.textContent = "Please add a name and price for all three items, choose a sharing method, and set an update routine.";
+      resultEl.textContent = "Sicela ufake igama nenani lazo zontathu izinto, ukhethe indlela yokwabelana, futhi usethe uhlelo lokuvuselela.";
       resultEl.classList.remove("hidden");
       resultEl.classList.add("result-error");
       return;
@@ -2281,14 +2283,14 @@ initReflection({
 
   btn.addEventListener("click", function () {
     if (!platformSelected.value || !isLinked.value || !whatCustomersCanDo.value.trim()) {
-      resultEl.textContent = "Please choose a platform, confirm your link status, and explain what customers will be able to do.";
+      resultEl.textContent = "Sicela ukhethe inkundla, uqinisekise isimo sesixhumanisi sakho, bese uchaza ukuthi amakhasimende azokwazi ukwenzani.";
       resultEl.classList.remove("hidden");
       resultEl.classList.add("result-error");
       return;
     }
 
     if (isLinked.value !== "Yes" && !linkByDate.value) {
-      resultEl.textContent = "Please set a date by which you will link your account.";
+      resultEl.textContent = "Sicela usethe usuku ozoxhumanisa ngalo i-akhawunti yakho.";
       resultEl.classList.remove("hidden");
       resultEl.classList.add("result-error");
       return;
@@ -2399,7 +2401,7 @@ initReflection({
       return;
     }
 
-    resultEl.textContent = "Idea bank saved. Posting every " + weeklyPostDay.value + ".";
+    resultEl.textContent = "Ibhange lemibono ligciniwe. Izothunyelwa njalo " + weeklyPostDay.value + ".";
     resultEl.classList.remove("hidden");
     resultEl.classList.remove("result-error");
     localStorage.setItem("ideaBankBadge", "earned");
@@ -2558,7 +2560,7 @@ initReflection({
     modal.innerHTML =
       '<div class="page-complete-icon">🎉</div>' +
       "<h2>Great work!</h2>" +
-      "<p>You've completed every challenge on this page and earned:</p>" +
+      "<p>Uqede yonke imisebenzi eyinselele ekuleli khasi futhi uthole:</p>" +
       badgeListHtml +
       '<button type="button" class="btn btn-primary page-complete-close">Continue</button>';
 
@@ -2595,13 +2597,13 @@ initReflection({
 
     var note = document.createElement("p");
     note.className = "download-responses-note";
-    note.textContent = "Get a PDF copy of everything you filled in on this page.";
+    note.textContent = "Thola ikhophi ye-PDF yakho konke okugcwalisile kuleli khasi.";
 
     var btn = document.createElement("button");
     btn.type = "button";
     btn.id = "downloadResponsesBtn";
     btn.className = "btn btn-primary";
-    btn.textContent = "⬇ Download My Responses (PDF)";
+    btn.textContent = "⬇ Landa Izimpendulo Zami (PDF)";
     btn.addEventListener("click", generateResponsesPdf);
 
     wrap.appendChild(note);
@@ -2880,7 +2882,7 @@ initReflection({
       if (!sections.length) {
         doc.setFontSize(11);
         doc.setTextColor(95, 95, 95);
-        doc.text("No responses were found to include in this PDF.", margin, y);
+        doc.text("Azikho izimpendulo ezitholakele ezingafakwa kule PDF.", margin, y);
       }
 
       var pageCount = doc.internal.getNumberOfPages();

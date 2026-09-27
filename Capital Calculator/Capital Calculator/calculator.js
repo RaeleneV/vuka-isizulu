@@ -41,9 +41,9 @@ if (category && mealID){
         });
     }
 } else {
-    mealTitle.textContent = "Custom Product Calculator";
+    mealTitle.textContent = "Custom Umkhiqizo Calculator";
     rates.textContent = "";
-    feelFree.textContent = "Add your own products below and fill in the details to calculate your startup capital.";
+    feelFree.textContent = "Engeza imikhiqizo yakho ngezansi bese ugcwalisa imininingwane ukuze ubalwe imali yakho yokuqala ibhizinisi.";
 }
 
 calculate();
@@ -181,7 +181,7 @@ document.getElementById("downloadList").addEventListener("click", async () =>{
     calculate();
 
     if (!window.jspdf){
-        alert("Sorry, the PDF download tool could not load. Please refresh the page and try again.");
+        alert("Uxolo, ithuluzi lokulanda i-PDF alikwazanga ukulayisha. Sicela uvuselele ikhasi bese uzama futhi.");
         return;
     }
 
@@ -260,7 +260,7 @@ document.getElementById("downloadList").addEventListener("click", async () =>{
                 "Wt./Vol.",
                 "Total Wt./Vol.",
                 "Price",
-                "Estimated Total"
+                "Isamba esilinganisiwe"
             ]
         ],
         body: rows,
@@ -300,9 +300,9 @@ document.getElementById("downloadList").addEventListener("click", async () =>{
     const totalBoxHeight = 25;
     const spaceBetween = 10;
 
-    const disclaimer = "Please note that this amount may not represent the total cost you will incur. " +
-        "The actual cost may be higher or lower depending on various factors. " +
-        "This figure is provided as an estimate to give you an indication of the potential expenses involved.";
+    const disclaimer = "Sicela uqaphele ukuthi le mali kungenzeka ingabi yisamba sezindleko ozoba nazo." +
+        "Izindleko zangempela zingaba phezulu noma ziphansi kuye ngezici ezahlukene." +
+        "Lesi sibalo sinikezwe njengesilinganiso ukuze sikunike umbono ngezindleko ezingase zibe khona.";
 
     const disclaimerLines = doc.splitTextToSize(disclaimer, 180);
 

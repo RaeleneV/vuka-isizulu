@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="en">
+<html lang="zu">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Startup Capital Calculator — Vuka</title>
+    <title>Isibali Semali Yokuqala Ibhizinisi — Vuka</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -16,24 +16,24 @@
   <link rel="manifest" href="manifest.json" />
   </head>
   <body>
-    <a class="skip-link" href="#main">Skip to main content</a>
+    <a class="skip-link" href="#main">Yeqa uye kokuqukethwe okuyinhloko</a>
 
     <header class="ribbon">
       <div class="container ribbon-inner">
         <a class="logo" href="../../index.html">
           <img class="logo-img" src="../../images_global/vuka-logo-white.png" alt="Vuka logo" />
         </a>
-        <p class="calculator-page-title">Startup Capital Calculator</p>
+        <p class="calculator-page-title">Isibali Semali Yokuqala Ibhizinisi</p>
         <nav class="nav-right nav-right--compact" id="navRight" aria-label="Primary">
           <ul class="nav-links">
-            <li><a href="../../index.html">Home</a></li>
-            <li><a href="../../index.html#about">About</a></li>
-            <li><a href="../../index.html#modules">Journeys</a></li>
-            <li><a href="../../index.html#faq">FAQ</a></li>
+            <li><a href="../../index.html">Ekhaya</a></li>
+            <li><a href="../../index.html#about">Mayelana</a></li>
+            <li><a href="../../index.html#modules">Uhambo</a></li>
+            <li><a href="../../index.html#faq">Imibuzo</a></li>
           </ul>
          <select
             class="lang-select"
-            aria-label="Choose Language"
+            aria-label="Khetha Ulimi"
             onchange="if (this.value) window.location.href = this.value;"
           >
             <option value="" selected>🌐 English</option>
@@ -42,7 +42,7 @@
           </select>
         </nav>
 
-        <a class="btn btn-ghost btn-sm header-back-btn" href="../../index.html">← Go back to Home Page</a>
+        <a class="btn btn-ghost btn-sm header-back-btn" href="../../index.html">← Buyela Ekhasini Lasekhaya</a>
 
         <button
           class="burger"
@@ -58,49 +58,49 @@
 
     <main id="main">
       <section class="hero">
-        <h1>Calculate Your Startup Capital</h1>
+        <h1>Bala Imali Yakho Yokuqala Ibhizinisi</h1>
         <p id="instruction">
-          Select the type of food business you would like start.
+          Khetha uhlobo lwebhizinisi lokudla ofuna ukuliqala.
         </p>
       </section>
 
       <section class="progress-container">
         <div class="step active">
           <span>1</span>
-          <p>Category</p>
+          <p>Isigaba</p>
         </div>
         <div class="line"></div>
         <div class="step">
           <span>2</span>
-          <p>Meal/Beverage</p>
+          <p>Ukudla/Isiphuzo</p>
         </div>
         <div class="line"></div>
         <div class="step">
           <span>3</span>
-          <p>Calculator</p>
+          <p>Isibali</p>
         </div>
       </section>
 
       <section class="food-beverage">
-        <h3 id="foodBtn">Food</h3>
-        <h3 id="beverageBtn">Beverage</h3>
+        <h3 id="foodBtn">Ukudla</h3>
+        <h3 id="beverageBtn">Isiphuzo</h3>
       </section>
 
       <section class="cards">
         <div class="card" data-category="street-food">
           <img src="Images/filledvetkoek.jpg" alt="Filled vetkoek" />
-          <h2>Popular Street Food</h2>
-          <p>Your fast selling favourites.</p>
+          <h2>Ukudla Okudumile KwaseMgwaqweni</h2>
+          <p>Okuthandwa kakhulu futhi okuthengiswa ngokushesha.</p>
         </div>
         <div class="card" data-category="traditional">
-          <img src="Images/papmogodu.jpg" alt="Pap and mogodu" />
-          <h2>Traditional Meals</h2>
-          <p>Timeless South African favourites.</p>
+          <img src="Images/papmogodu.jpg" alt="Iphalishi nomgodu" />
+          <h2>Ukudla Kwendabuko</h2>
+          <p>Okuthandwa kakhulu eNingizimu Afrika okungaphelelwa yisikhathi.</p>
         </div>
         <div class="card" data-category="light-meals">
           <img src="Images/amagwinya.jpeg" alt="Amagwinya" />
-          <h2>Light Meals</h2>
-          <p>A little something lekker.</p>
+          <h2>Ukudla Okulula</h2>
+          <p>Okumnandi okuncane.</p>
         </div>
         <div class="card" data-category="baked-goods">
           <img src="Images/koeksisters.jpg" alt="Koeksisters" />
@@ -114,14 +114,14 @@
           style="display: none"
         >
           <img src="Images/tea.png" alt="Tea" />
-          <h2>Beverages</h2>
-          <p>Cold and warm beverages.</p>
+          <h2>Iziphuzo</h2>
+          <p>Iziphuzo ezibandayo nezifudumele.</p>
         </div>
       </section>
 
       <section class="button-section">
-        <button id="strCalculator" class="btn btn-outline confirm-btn">Calculator</button>
-        <button id="nextBtn" class="btn btn-primary" disabled>Next →</button>
+        <button id="strCalculator" class="btn btn-outline confirm-btn">Isibali</button>
+        <button id="nextBtn" class="btn btn-primary" disabled>Okulandelayo →</button>
       </section>
     </main>
 
@@ -136,17 +136,17 @@
               alt="VUKA"
             />
             <p class="footer-note">
-              Free skills for South Africa's food-sector entrepreneurs.
+              Amakhono amahhala osomabhizinisi bomkhakha wokudla eNingizimu Afrika.
             </p>
           </div>
 
           <!-- Quick links -->
           <div class="footer-column">
-            <h3>Quick Links</h3>
+            <h3>Izixhumanisi Ezisheshayo</h3>
             <div class="footer-links">
-              <a href="../../index.html">Home</a>
-              <a href="../../team.html">Meet the Team</a>
-              <a href="https://forms.google.com/" target="_blank" rel="noopener">Please Review Us</a>
+              <a href="../../index.html">Ekhaya</a>
+              <a href="../../team.html">Hlangana neThimba</a>
+              <a href="https://forms.google.com/" target="_blank" rel="noopener">Sicela Usibuyekeze</a>
             </div>
           </div>
         </div>
@@ -165,7 +165,7 @@
             </div>
           </div>
 
-          <p class="footer-copyright">© 2026 VUKA. All rights reserved.</p>
+          <p class="footer-copyright">© 2026 VUKA. Wonke amalungelo agodliwe.</p>
         </div>
       </div>
     </footer>
